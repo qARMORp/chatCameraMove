@@ -11,11 +11,6 @@ AsiPlugin::~AsiPlugin() {
 	gameloopHook.remove();
 }
 
-void AddMessageJumpQ(const char* text, unsigned int time, unsigned short flag, bool bPreviousBrief)
-{
-	((void(__cdecl*)(const char*, unsigned int, unsigned short, bool))0x69F1E0)(text, time, flag, bPreviousBrief);
-}
-
 void AsiPlugin::GameloopHooked(const decltype(gameloopHook)& hook) {
 	static bool IsInitialized = false;
 	if (!IsInitialized && SAMP::IsSAMPInitialized()) {
